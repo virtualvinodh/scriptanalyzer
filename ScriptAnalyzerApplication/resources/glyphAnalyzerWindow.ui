@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScriptAnalyzer</class>
+ <widget class="QMainWindow" name="ScriptAnalyzer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>796</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Glyph Analyzer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>1291</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="trajTab">
+     <attribute name="title">
+      <string>Trajectory</string>
+     </attribute>
+     <widget class="QGraphicsView" name="glyphView">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>100</y>
+        <width>511</width>
+        <height>341</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="traceView">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>100</y>
+        <width>511</width>
+        <height>341</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="trajGenBtn">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>200</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Generate</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="autoTraceBtn">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>260</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>AutoTrace - Nodes</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>18</x>
+        <y>23</y>
+        <width>97</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="minLengthCheck">
+         <property name="text">
+          <string>Min. Length</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="minCurveCheck">
+         <property name="text">
+          <string>Min. Curvature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="dirCheck">
+         <property name="text">
+          <string>Direction</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QListWidget" name="singleTrajList">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>530</y>
+        <width>256</width>
+        <height>141</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="multiTrajList">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>530</y>
+        <width>256</width>
+        <height>141</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>506</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Single Stroke Trajectory</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>373</x>
+        <y>505</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Multi Stroke Trajectory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="trajDispBtn">
+      <property name="geometry">
+       <rect>
+        <x>1089</x>
+        <y>559</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Display Trajectory</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>1271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="rankTrajList">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>530</y>
+        <width>256</width>
+        <height>141</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>490</y>
+        <width>20</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>757</x>
+        <y>503</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Top Trajectories</string>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="singleTrajLCD">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>500</y>
+        <width>64</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="multiTrajLCD">
+      <property name="geometry">
+       <rect>
+        <x>491</x>
+        <y>500</y>
+        <width>64</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="rankTrajLCD">
+      <property name="geometry">
+       <rect>
+        <x>862</x>
+        <y>499</y>
+        <width>64</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>4</y>
+        <width>531</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Heuristics</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>63</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Clockwise</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>33</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Anticlockwise</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_8">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>60</y>
+         <width>161</width>
+         <height>0</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_9">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>60</y>
+         <width>161</width>
+         <height>0</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>103</x>
+         <y>8</y>
+         <width>20</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>126</x>
+         <y>1</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Direction</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>124</x>
+         <y>26</y>
+         <width>182</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="L2RCheck">
+          <property name="text">
+           <string>Left To Right</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QCheckBox" name="T2BCheck">
+          <property name="text">
+           <string>Top to Bottom</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QCheckBox" name="B2TCheck">
+          <property name="text">
+           <string>Bottom to Top</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="R2LCheck">
+          <property name="text">
+           <string>Right to Left</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>8</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Additional</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="retraceCheck">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>40</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Include Retraces</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>8</y>
+         <width>20</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSpinBox" name="zoomSpin">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>403</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>50</number>
+      </property>
+      <property name="maximum">
+       <number>300</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>587</x>
+        <y>410</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Zoom</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearBtn">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>160</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="strokeAnalyzeBtn">
+      <property name="geometry">
+       <rect>
+        <x>1090</x>
+        <y>616</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Analyze Trajectory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="importImgBtn">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>120</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Import Image</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>455</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Glyph ID:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="glyphIDTxt">
+      <property name="geometry">
+       <rect>
+        <x>813</x>
+        <y>452</y>
+        <width>31</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="writeBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>352</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Velocity Profile</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_5">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>248</y>
+        <width>118</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>1192</x>
+        <y>451</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>List All</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="closeBtnN">
+      <property name="geometry">
+       <rect>
+        <x>1170</x>
+        <y>20</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="autoTraceBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>305</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>AutoTrace - Edges</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="viewLog">
+      <property name="geometry">
+       <rect>
+        <x>1044</x>
+        <y>20</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>View Change Log</string>
+      </property>
+     </widget>
+     <zorder>groupBox</zorder>
+     <zorder>glyphView</zorder>
+     <zorder>traceView</zorder>
+     <zorder>trajGenBtn</zorder>
+     <zorder>autoTraceBtn</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+     <zorder>singleTrajList</zorder>
+     <zorder>multiTrajList</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
+     <zorder>trajDispBtn</zorder>
+     <zorder>line</zorder>
+     <zorder>rankTrajList</zorder>
+     <zorder>line_2</zorder>
+     <zorder>label_6</zorder>
+     <zorder>singleTrajLCD</zorder>
+     <zorder>multiTrajLCD</zorder>
+     <zorder>rankTrajLCD</zorder>
+     <zorder>zoomSpin</zorder>
+     <zorder>label_7</zorder>
+     <zorder>clearBtn</zorder>
+     <zorder>strokeAnalyzeBtn</zorder>
+     <zorder>importImgBtn</zorder>
+     <zorder>label_11</zorder>
+     <zorder>glyphIDTxt</zorder>
+     <zorder>writeBtn_2</zorder>
+     <zorder>line_5</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>closeBtnN</zorder>
+     <zorder>autoTraceBtn_2</zorder>
+     <zorder>viewLog</zorder>
+    </widget>
+    <widget class="QWidget" name="strokeTab">
+     <attribute name="title">
+      <string>Stroke</string>
+     </attribute>
+     <widget class="QGraphicsView" name="strokeView">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>511</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>490</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Stroke Count</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="subStrokeView">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>50</y>
+        <width>511</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="productionLbl">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>570</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="strokeNumFeatTbl">
+      <property name="geometry">
+       <rect>
+        <x>38</x>
+        <y>521</y>
+        <width>211</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Totel Pen Strokes</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Disjoint Strokes</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Retraces</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Up Strokes</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Down Strokes</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Value</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>520</y>
+        <width>211</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Disfluency</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Entropy</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Changeability</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Stroke Lengths</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Value</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>342</x>
+        <y>492</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Production Features</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>490</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Geometric Features</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="geoFeatTbl">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>520</y>
+        <width>191</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Breadth Index</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Compactness</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Openness</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Avg. Curvature</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Size</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Divergence</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Value</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="strokePropFeatTbl">
+      <property name="geometry">
+       <rect>
+        <x>987</x>
+        <y>521</y>
+        <width>191</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Init. Angle</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Major. Angle</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Diverg. Angle</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Angles List</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Value</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>490</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Angle Features</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reAnalyzeBtn">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>110</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Analyze</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Glyph"/>
+    <addaction name="actionSave_Glyph"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionList_Glyphs"/>
+   <addaction name="actionCompareGlyphs"/>
+   <addaction name="actionExport_Data"/>
+  </widget>
+  <action name="actionOpen_Glyph">
+   <property name="text">
+    <string>Open Glyph...</string>
+   </property>
+  </action>
+  <action name="actionOpen_Script">
+   <property name="text">
+    <string>Open Symbol Set</string>
+   </property>
+  </action>
+  <action name="actionSave_Glyph">
+   <property name="text">
+    <string>Save Glyph..</string>
+   </property>
+  </action>
+  <action name="actionSave_Script">
+   <property name="text">
+    <string>Save Glyph Set</string>
+   </property>
+  </action>
+  <action name="actionOpen_Image">
+   <property name="text">
+    <string>Open Image...</string>
+   </property>
+  </action>
+  <action name="actionGlyph_Features">
+   <property name="text">
+    <string>Compare Glyps</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionCompare_Scripts">
+   <property name="text">
+    <string>Compare Scripts</string>
+   </property>
+  </action>
+  <action name="actionCompare_Features">
+   <property name="text">
+    <string>Compare Features</string>
+   </property>
+  </action>
+  <action name="actionCompareGlyphs">
+   <property name="text">
+    <string>CompareGlyphs</string>
+   </property>
+  </action>
+  <action name="actionExport_Data">
+   <property name="text">
+    <string>Export Data</string>
+   </property>
+  </action>
+  <action name="actionList_Glyphs">
+   <property name="text">
+    <string>List Glyphs</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
